@@ -4,16 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Products</title>
+    <link rel="stylesheet" href="/main.css"/>
   </head>
   <body>
-    <form action="/admin/add-product" method="POST">
-      <label for="name"></label>
-            <input id="name" name="name" type="text"></input >
-      <label for="price"></label>
-            <input id="price" name="price" type="number"></input >
-      <label for="quantity"></label>
-            <input id="quantity" name="quantity" type="number"></input >
-      <button type="submit">Add Item</button>
+  <header>
+  <nav class="nav-header">
+    <a class="nav-item" href="/admin">Admin Products</a>
+    <a class="nav-item" href="/admin/add-product">Admin Add Product</a>
+    <a class="nav-item" href="/index">Shop</a>
+  </nav>
+</header>
+<h2 class="page-header">Add a product</h2>
+    <form class="product-form" action="/admin/add-product" method="POST">
+      <div class="form-container__inner"><label class="product-form__label" for="name">Product Name</label>
+            <input class="product-form__controls" id="name" name="name" type="text"></input >
+        <label class="product-form__label" for="price">Price $.</label>
+            <input class="product-form__controls"  id="price" name="price" type="number"></input >
+        <label class="product-form__label" for="quantity">Stock Quantity</label>
+        <input class="product-form__controls" id="quantity" name="quantity" type="number"></input ></div>
+        
+      <button   type="submit" class="btn">Add Item</button>
     </form>
   </body>
 </html>

@@ -1,7 +1,7 @@
 const { Sequelize } = require("sequelize");
 const sequelizeDB = require("../util/database");
 
-const InventoryProduct = sequelizeDB.define("inventory-product", {
+const Product = sequelizeDB.define("product", {
   id: {
     primaryKey: true,
     autoIncrement: true,
@@ -22,4 +22,4 @@ const InventoryProduct = sequelizeDB.define("inventory-product", {
   },
 });
 
-module.exports = InventoryProduct;
+module.exports = Product;

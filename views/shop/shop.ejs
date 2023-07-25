@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav-header">
+        <a class="nav-item" href="/admin">Admin Products</a>
+        <a class="nav-item" href="/admin/add-product">Admin Add Product</a>
+        <a class="nav-item" href="/index">Shop</a>
+      </nav>
+    </header>
+    <h2 class="page-header">Products</h1>
+    <ul class="shop-products__container">
+      <% if(products.length>0) {%> <% for(let product of products){%>
+      <li class="shop-product" ><p class="shop-product__info"><b>Product: </b><%= product.name%></p>
+      <p class="shop-product__info"><b>Price: $.</b><%= product.price%></p>
+      <form class="shop-product__info" action="/buy-from-store/<%=product.id %>?quantity=1" method="POST">
+        <input type="hidden" value="<%=product.id %>" />
+        <button type="submit" class="buy-btn">Buy 1</button>
+      </form>
+      <form class="shop-product__info" action="/buy-from-store/<%=product.id %>?quantity=2" method="POST">
+        <input type="hidden" value="<%=product.id %>" />
+        <button type="submit" class="buy-btn">Buy 2</button>
+      </form>
+      <form class="shop-product__info" action="/buy-from-store/<%=product.id %>?quantity=3" method="POST">
+        <input type="hidden" value="<%=product.id %>" />
+        <button type="submit" class="buy-btn">Buy 3</button>
+      </form></li>
+      <%} %> <%} else {%>
+      <h1>No product found!</h1>
+      <%} %>
+    </ul>
+  </body>
+</html>

@@ -4,14 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/main.css" />
   </head>
   <body>
-    <header>Products</header>
-    <ul>
+    <header>
+      <nav class="nav-header">
+        <a class="nav-item" href="/admin">Admin Products</a>
+        <a class="nav-item" href="/admin/add-product">Admin Add Product</a>
+        <a class="nav-item" href="/index">Shop</a>
+      </nav>
+    </header>
+    <h2 class="page-header">Products</h2>
+    <ul class="admin-products__list">
       <% if(products.length>0) {%> <% for(let product of products){%>
-      <p><%= product.name%></p>
-      <p><%= product.price%></p>
-      <p><%= product.quantity%></p>
+      <li class="admin-product">
+        <p class="product-info"><b>Product</b> : <%= product.name%></p>
+        <p class="product-info"><b>Price $.</b>: <%= product.price%></p>
+        <p class="product-info"><b>Quantity</b>:<%= product.quantity%></p>
+      </li>
       <%} %> <%} else {%>
       <h1>No product found!</h1>
       <%} %>

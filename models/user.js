@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require("sequelize");
 const sequelizeDB = require("../util/database");
 
-const AdminUser = sequelizeDB.define("admin-user", {
+const User = sequelizeDB.define("user", {
   id: {
     primaryKey: true,
     autoIncrement: true,
@@ -18,4 +18,4 @@ const AdminUser = sequelizeDB.define("admin-user", {
   },
 });
 
-module.exports = AdminUser;
+module.exports = User;
